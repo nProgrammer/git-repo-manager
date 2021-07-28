@@ -9,10 +9,10 @@ import (
 func main() {
 	err := ui.Main(func() {
 		input := ui.NewEntry()
-		button := ui.NewButton("LOG")
+		button := ui.NewButton("Log repo from path")
 		logs := ui.NewLabel("")
 		box := ui.NewVerticalBox()
-		box.Append(ui.NewLabel("Enter your name:"), false)
+		box.Append(ui.NewLabel("Enter path to repo:"), false)
 		box.Append(input, false)
 		box.Append(button, false)
 		box.Append(logs, false)
