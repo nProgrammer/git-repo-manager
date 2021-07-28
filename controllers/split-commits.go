@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func SplitCommits(data []string) []models.Commit {
+func splitCommits(data []string) []models.Commit {
 	a := regexp.MustCompile("commit").Split(strings.Join(data, " "), -1)
 	var commits []models.Commit
 	i := 1
