@@ -1,13 +1,15 @@
 package controllers
 
 import (
+	"os"
 	"os/exec"
 	"regexp"
 
 	"github.com/andlabs/ui"
 )
 
-func LogCommits(logs *ui.Label) *ui.Label {
+func LogCommits(logs *ui.Label, path string) *ui.Label {
+	os.Chdir(path)
 	out, err := exec.Command("git", "log").Output()
 	if err != nil {
 		panic(err)

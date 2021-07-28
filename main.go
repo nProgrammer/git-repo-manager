@@ -20,7 +20,7 @@ func main() {
 		window.SetMargined(true)
 		window.SetChild(box)
 		button.OnClicked(func(*ui.Button) {
-			logs = controllers.LogCommits(logs)
+			logs = controllers.LogCommits(logs, input.Text())
 			// greeting.SetText("Commit HEX: " + data[1] + "\nAuthor: " + data[3] + "\nEmail: " + data[4] + "\nDate of commit: " +
 			// 	data[8] + " " + data[9] + " " + data[10] + " " + data[11] + " " + data[12] + "\nMessage: " + strings.Join(data[19:], " "))
 		})
