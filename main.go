@@ -12,12 +12,12 @@ func main() {
 	err := ui.Main(func() {
 		input := ui.NewEntry()
 		button := ui.NewButton("LOG")
-		greeting := ui.NewLabel("")
+		logs := ui.NewLabel("")
 		box := ui.NewVerticalBox()
 		box.Append(ui.NewLabel("Enter your name:"), false)
 		box.Append(input, false)
 		box.Append(button, false)
-		box.Append(greeting, false)
+		box.Append(logs, false)
 		window := ui.NewWindow("Hello", 600, 600, false)
 		window.SetMargined(true)
 		window.SetChild(box)
@@ -38,10 +38,10 @@ func main() {
 			for i < len(commits) {
 				text = text + "Commit HEX: " + commits[i].Hex + "\nAuthor: " + commits[i].Author + " " + commits[i].Email +
 					"\nDate of commit: " + commits[i].Day + " " + commits[i].Month + " " + commits[i].Dint + " " + commits[i].Time + " " +
-					commits[i].Year + "\nCommit message: " + commits[i].Message
+					commits[i].Year + "\nCommit message: " + commits[i].Message + "\n\n"
 				i++
 			}
-			greeting.SetText(text)
+			logs.SetText(text)
 			// greeting.SetText("Commit HEX: " + data[1] + "\nAuthor: " + data[3] + "\nEmail: " + data[4] + "\nDate of commit: " +
 			// 	data[8] + " " + data[9] + " " + data[10] + " " + data[11] + " " + data[12] + "\nMessage: " + strings.Join(data[19:], " "))
 		})

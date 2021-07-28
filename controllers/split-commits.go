@@ -22,7 +22,7 @@ func SplitCommits(data []string) []models.Commit {
 		commit.Dint = b[9]
 		commit.Time = b[10]
 		commit.Year = b[11]
-		commit.Message = strings.Join(b[18:], "")
+		commit.Message = strings.Join(b[18:], " ")
 		commits = append(commits, commit)
 		i++
 	}
